@@ -992,6 +992,11 @@ section,
   top: calc(50% - 47px);
 }
 
+/* Style for "Sobre nós" heading */
+.about h3 {
+  color: #BC4B51;
+}
+
 /*--------------------------------------------------------------
 # Stats Section
 --------------------------------------------------------------*/
@@ -1298,6 +1303,11 @@ section,
 
 .portfolio .portfolio-content:hover img {
   transform: scale(1.1);
+}
+
+/* Style for "Últimas Ocorrências" heading */
+#portfolio h2 {
+  color: #009970;
 }
 
 /*--------------------------------------------------------------
