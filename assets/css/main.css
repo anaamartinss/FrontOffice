@@ -1002,6 +1002,7 @@ section,
 --------------------------------------------------------------*/
 .stats {
   padding: 20px 0;
+  background-color: #8CB369;;
 }
 
 .stats .stats-item {
