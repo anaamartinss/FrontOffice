@@ -1120,6 +1120,7 @@ section,
   padding: 80px 0;
   position: relative;
   clip-path: inset(0);
+  background-color: #C1121F;
 }
 
 .call-to-action img {
@@ -1432,71 +1433,6 @@ section,
 }
 
 /*--------------------------------------------------------------
-# Team Section
---------------------------------------------------------------*/
-.team .member {
-  background-color: var(--surface-color);
-  box-shadow: 0px 2px 25px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  border-radius: 15px;
-  padding: 15px;
-  overflow: hidden;
-}
-
-.team .member img {
-  border-radius: 15px;
-  overflow: hidden;
-}
-
-.team .member .member-content {
-  padding: 0 20px 30px 20px;
-}
-
-.team .member h4 {
-  font-weight: 700;
-  margin-top: 16px;
-  margin-bottom: 2px;
-  font-size: 20px;
-}
-
-.team .member span {
-  font-style: italic;
-  display: block;
-  font-size: 14px;
-  color: color-mix(in srgb, var(--default-color), transparent 40%);
-}
-
-.team .member .social {
-  margin-top: 15px;
-  margin-bottom: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-}
-
-.team .member .social a {
-  color: color-mix(in srgb, var(--default-color), transparent 60%);
-  transition: 0.3s;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid color-mix(in srgb, var(--default-color), transparent 60%);
-}
-
-.team .member .social a:hover {
-  color: var(--accent-color);
-  border-color: var(--accent-color);
-}
-
-.team .member .social i {
-  font-size: 18px;
-  margin: 0 2px;
-}
-
-/*--------------------------------------------------------------
 # Contact Section
 --------------------------------------------------------------*/
 .contact .info-wrap {
@@ -1772,4 +1708,50 @@ section,
 
 .lower-Div-qualidade {
   margin-top: 47px; /* Ajuste o valor conforme necessário */
+}
+
+
+/*--------------------------------------------------------------
+# Video Section Section
+--------------------------------------------------------------*/
+.video {
+  padding: 80px 0;
+  position: relative;
+  clip-path: inset(0);
+}
+
+.full-width-video {
+  width: 100%; /* Faz o vídeo ocupar toda a largura da secção */
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
+.full-width-video {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.video-overlay {
+  position: absolute;
+  top: 50%; /* Centraliza verticalmente */
+  left: 50%; /* Centraliza horizontalmente */
+  transform: translate(-50%, -50%); /* Ajusta o ponto de referência */
+  text-align: center;
+  z-index: 1; /* Garante que o texto fique acima do vídeo */
+}
+
+.video-overlay h3 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.video-overlay p {
+  font-size: 1.2rem;
+  color: #ffffff;
 }
