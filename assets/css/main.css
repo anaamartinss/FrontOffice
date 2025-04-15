@@ -1104,6 +1104,15 @@ section,
   background: var(--accent-color);
 }
 
+.icon-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%; /* Garante que todos os ícones tenham a mesma altura */
+  text-align: center; /* Centraliza o texto */
+}
+
 /*--------------------------------------------------------------
 # Call To Action Section
 --------------------------------------------------------------*/
@@ -1759,4 +1768,8 @@ section,
 .status-bar-open {
   background-color: #C1121F; /* Fundo vermelho */
   color: white !important; /* Força o texto a ser branco */
+}
+
+.lower-Div-qualidade {
+  margin-top: 47px; /* Ajuste o valor conforme necessário */
 }
