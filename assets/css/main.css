@@ -399,7 +399,7 @@ h6 {
   .navmenu .dropdown ul a:hover,
   .navmenu .dropdown ul .active:hover,
   .navmenu .dropdown ul li:hover>a {
-    color: var(--nav-dropdown-hover-color);
+    color: var (--nav-dropdown-hover-color);
   }
 
   .navmenu .dropdown:hover>ul {
@@ -1260,24 +1260,40 @@ section,
 }
 
 .portfolio .portfolio-content {
-  background-color: var(--surface-color);
-  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+  background-color: #eeeeee; /* Define o fundo como cinza claro */
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1); /* Mantém o sombreamento */
   height: 100%;
   overflow: hidden;
+  display: flex; /* Ativa o flexbox */
+  flex-direction: column; /* Organiza os elementos verticalmente */
+  align-items: center; /* Centraliza os elementos horizontalmente */
+  justify-content: space-between; /* Espaça os elementos verticalmente */
+  text-align: center; /* Centraliza o texto */
+  border-radius: 0; /* Remove os cantos arredondados */
+  padding: 0; /* Remove o espaçamento interno */
+  width: 100%; /* Garante que todos os quadrados ocupem a mesma largura */
+  max-width: 270px; /* Define um tamanho máximo consistente */
+  margin: 0 auto; /* Centraliza os quadrados */
 }
 
 .portfolio .portfolio-content img {
   transition: 0.3s;
   position: relative;
   z-index: 1;
+  max-width: 100%; /* Garante que a imagem não ultrapasse o contêiner */
+  height: auto; /* Mantém a proporção da imagem */
+  margin-bottom: 10px; /* Espaço entre a imagem e a barra */
 }
 
 .portfolio .portfolio-content .portfolio-info {
-  background-color: var(--background-color);
-  border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
-  padding: 25px 20px;
-  position: relative;
-  z-index: 2;
+  background-color: #eeeeee; /* Define o fundo como cinza claro */
+  padding: 15px 0; /* Ajusta o espaçamento interno */
+  color: #444444; /* Garante que o texto seja visível */
+  width: 100%; /* Faz o quadrado ocupar toda a largura do contêiner */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centraliza o conteúdo */
+  border-radius: 0; /* Remove os cantos arredondados */
 }
 
 .portfolio .portfolio-content .portfolio-info h4 {
@@ -1309,6 +1325,20 @@ section,
 /* Style for "Últimas Ocorrências" heading */
 #portfolio h2 {
   color: #009970;
+}
+
+/* Alinha os itens do portfólio em uma linha */
+.isotope-container {
+  display: flex; /* Ativa o flexbox */
+  flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha, se necessário */
+  gap: 20px; /* Espaçamento entre os itens */
+  justify-content: space-between; /* Espaça os itens uniformemente */
+}
+
+.portfolio-item {
+  flex: 1 1 calc(33.333% - 20px); /* Cada item ocupa 1/3 da largura com espaçamento */
+  max-width: calc(33.333% - 20px); /* Garante que os itens não ultrapassem 1/3 */
+  box-sizing: border-box; /* Inclui padding e borda no cálculo da largura */
 }
 
 /*--------------------------------------------------------------
@@ -1573,7 +1603,7 @@ section,
 .portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet {
   width: 12px;
   height: 12px;
-  background-color: color-mix(in srgb, var(--default-color), transparent 85%);
+  background-color: color-mix(in srgb, var (--default-color), transparent 85%);
   opacity: 1;
 }
 
@@ -1697,4 +1727,36 @@ section,
   font-weight: bold; /* Negrito */
   margin-right: auto; /* Move para a ponta esquerda */
   display: inline-block; /* Garante que o texto seja tratado como um bloco inline */
+}
+
+/* Estilo base para todas as barras */
+.status-bar,
+.status-bar-completed,
+.status-bar-open {
+  padding: 5px 0; /* Ajusta o espaçamento interno */
+  font-weight: bold;
+  text-align: center;
+  white-space: nowrap; /* Evita quebra de linha */
+  width: 100%; /* Faz a barra ocupar toda a largura do quadrado */
+  font-size: 14px; /* Ajusta o tamanho da fonte */
+  margin: 0; /* Remove margens */
+  border-radius: 0; /* Remove os cantos arredondados */
+  color: white !important; /* Força o texto a ser branco */
+}
+
+/* Estilo para a barra verde (concluida) */
+.status-bar-completed {
+  background-color: #639B1F; /* Fundo verde */
+}
+
+/* Estilo para a barra amarela (em análise) */
+.status-bar {
+  background-color: #FFBB4D; /* Fundo amarelo */
+  color: white !important; /* Força o texto a ser branco */
+}
+
+/* Estilo para a barra vermelha (em aberto) */
+.status-bar-open {
+  background-color: #C1121F; /* Fundo vermelho */
+  color: white !important; /* Força o texto a ser branco */
 }
