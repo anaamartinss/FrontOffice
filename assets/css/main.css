@@ -1145,6 +1145,11 @@ section,
 .call-to-action .container {
   position: relative;
   z-index: 3;
+  display: flex; /* Ativa o Flexbox */
+  flex-direction: column; /* Organiza os itens verticalmente */
+  justify-content: center; /* Centraliza verticalmente */
+  align-items: center; /* Centraliza horizontalmente */
+  text-align: center; /* Centraliza o texto */
 }
 
 .call-to-action h3 {
@@ -1172,8 +1177,7 @@ section,
 }
 
 .call-to-action .cta-btn:hover {
-  background: var(--accent-color);
-  border: 2px solid var(--accent-color);
+  background: #DEA6A8;
 }
 
 /*--------------------------------------------------------------
@@ -1704,10 +1708,6 @@ section,
 .status-bar-open {
   background-color: #C1121F; /* Fundo vermelho */
   color: white !important; /* Força o texto a ser branco */
-}
-
-.lower-Div-qualidade {
-  margin-top: 47px; /* Ajuste o valor conforme necessário */
 }
 
 
