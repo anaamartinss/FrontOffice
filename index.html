@@ -268,52 +268,92 @@
 
     <!-- Last Section -->
     <section id="ultimas" class="portfolio section">
-
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
         <h2>Últimas Ocorrências</h2>
       </div><!-- End Section Title -->
 
       <div class="container">
-
-        <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
-
-          <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+        <div class="swiper init-swiper">
+          <script type="application/json" class="swiper-config">
+            {
+              "loop": true,
+              "speed": 600,
+              "autoplay": {
+                "delay": 5000
+              },
+              "slidesPerView": 3,
+              "spaceBetween": 30,
+              "pagination": {
+                "el": ".swiper-pagination",
+                "clickable": true
+              },
+              "navigation": {
+                "nextEl": ".swiper-button-next",
+                "prevEl": ".swiper-button-prev"
+              }
+            }
+          </script>
+          <div class="swiper-wrapper">
+            <!-- Slide 1 -->
+            <div class="swiper-slide">
               <div class="portfolio-content h-100">
-                <a href="assets/img/portfolio/ocorrencia1.png" data-gallery="portfolio-gallery-app" class="glightbox"><img src="assets/img/portfolio/ocorrencia1.png" class="img-fluid" alt=""></a>
+                <a href="assets/img/portfolio/ocorrencia1.png" data-gallery="portfolio-gallery-app" class="glightbox">
+                  <img src="assets/img/portfolio/ocorrencia1.png" class="img-fluid" alt="">
+                </a>
                 <div class="portfolio-info">
                   <h4><a href="portfolio-details.html" title="More Details">Poluição Rio Vizela</a></h4>
                   <p class="status-bar-completed">concluida</p>
                 </div>
               </div>
-            </div><!-- End Last Item -->
+            </div><!-- End Slide 1 -->
 
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
+            <!-- Slide 2 -->
+            <div class="swiper-slide">
               <div class="portfolio-content h-100">
-                <a href="assets/img/portfolio/ocorrencia2.png" data-gallery="portfolio-gallery-app" class="glightbox"><img src="assets/img/portfolio/ocorrencia2.png" class="img-fluid" alt=""></a>
+                <a href="assets/img/portfolio/ocorrencia2.png" data-gallery="portfolio-gallery-app" class="glightbox">
+                  <img src="assets/img/portfolio/ocorrencia2.png" class="img-fluid" alt="">
+                </a>
                 <div class="portfolio-info">
-
-                  <h4><a href="portfolio-details.html" title="More Details">Arvore caída na Rua caminho real</a></h4>
-                  <p class="status-bar">em analise</p>
+                  <h4><a href="portfolio-details.html" title="More Details">Árvore caída na Rua Caminho Real</a></h4>
+                  <p class="status-bar">em análise</p>
                 </div>
               </div>
-            </div><!-- End Last Item -->
+            </div><!-- End Slide 2 -->
 
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
+            <!-- Slide 3 -->
+            <div class="swiper-slide">
               <div class="portfolio-content h-100">
-                <a href="assets/img/portfolio/ocorrencia3.png" data-gallery="portfolio-gallery-app" class="glightbox"><img src="assets/img/portfolio/ocorrencia3.png" class="img-fluid" alt=""></a>
+                <a href="assets/img/portfolio/ocorrencia1.png" data-gallery="portfolio-gallery-app" class="glightbox">
+                  <img src="assets/img/portfolio/ocorrencia1.png" class="img-fluid" alt="">
+                </a>
+                <div class="portfolio-info">
+                  <h4><a href="portfolio-details.html" title="More Details">Poluição Rio Vizela</a></h4>
+                  <p class="status-bar-completed">concluida</p>
+                </div>
+              </div>
+            </div><!-- End Slide 3 -->
+
+            <!-- Slide 4 -->
+            <div class="swiper-slide">
+              <div class="portfolio-content h-100">
+                <a href="assets/img/portfolio/ocorrencia3.png" data-gallery="portfolio-gallery-app" class="glightbox">
+                  <img src="assets/img/portfolio/ocorrencia3.png" class="img-fluid" alt="">
+                </a>
                 <div class="portfolio-info">
                   <h4><a href="portfolio-details.html" title="More Details">Inundação na Rua Caramulo</a></h4>
                   <p class="status-bar-open">em aberto</p>
                 </div>
               </div>
-            </div><!-- End Last Item -->
+            </div><!-- End Slide 4 -->
+          </div>
+          <!-- Add Pagination -->
+          <div class="swiper-pagination"></div>
+          <!-- Add Navigation -->
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
         </div>
-
       </div>
-
     </section><!-- /Last Section -->
 
     <!-- Video Section -->
@@ -345,76 +385,66 @@
     
               <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
                 <div class="service-item  position-relative">
-                  <div class="icon">
-                    <i class="bi bi-activity"></i>
-                  </div>
-                  <a href="service-details.html" class="stretched-link">
-                    <h3>Nesciunt Mete</h3>
-                  </a>
-                  <p>Provident nihil minus qui consequatur non omnis maiores. Eos accusantium minus dolores iure perferendis tempore et consequatur.</p>
+                  <img src="assets/img/portfolio/reportar1.png" class="imgType" alt="">
+                    <h3>Árvores Caidas ou em risco de queda</h3>
                 </div>
               </div><!-- End Section Item -->
     
               <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
                 <div class="service-item position-relative">
-                  <div class="icon">
-                    <i class="bi bi-broadcast"></i>
-                  </div>
-                  <a href="service-details.html" class="stretched-link">
-                    <h3>Eosle Commodi</h3>
-                  </a>
-                  <p>Ut autem aut autem non a. Sint sint sit facilis nam iusto sint. Libero corrupti neque eum hic non ut nesciunt dolorem.</p>
+                  <img src="assets/img/portfolio/reportar2.png" class="imgType" alt="">
+                    <h3>Ramos Partidos a obstruir vias ou passeios</h3>
                 </div>
               </div><!-- End Section Item -->
     
               <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
                 <div class="service-item position-relative">
-                  <div class="icon">
-                    <i class="bi bi-easel"></i>
-                  </div>
-                  <a href="service-details.html" class="stretched-link">
-                    <h3>Ledo Markt</h3>
-                  </a>
-                  <p>Ut excepturi voluptatem nisi sed. Quidem fuga consequatur. Minus ea aut. Vel qui id voluptas adipisci eos earum corrupti.</p>
+                  <img src="assets/img/portfolio/reportar3.png" class="imgType" alt="">
+                    <h3>Plantas invasoras a afetar a vegetação local</h3>
                 </div>
               </div><!-- End Section Item -->
     
-              <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
-                <div class="service-item position-relative">
-                  <div class="icon">
-                    <i class="bi bi-bounding-box-circles"></i>
-                  </div>
-                  <a href="service-details.html" class="stretched-link">
-                    <h3>Asperiores Commodit</h3>
-                  </a>
-                  <p>Non et temporibus minus omnis sed dolor esse consequatur. Cupiditate sed error ea fuga sit provident adipisci neque.</p>
-                  <a href="service-details.html" class="stretched-link"></a>
+             
+              <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                <div class="service-item  position-relative">
+                  <img src="assets/img/portfolio/reportar4.png" class="imgType" alt="">
+                    <h3>Estruturas debilitadas</h3>
                 </div>
               </div><!-- End Section Item -->
     
-              <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
+              <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
                 <div class="service-item position-relative">
-                  <div class="icon">
-                    <i class="bi bi-calendar4-week"></i>
-                  </div>
-                  <a href="service-details.html" class="stretched-link">
-                    <h3>Velit Doloremque</h3>
-                  </a>
-                  <p>Cumque et suscipit saepe. Est maiores autem enim facilis ut aut ipsam corporis aut. Sed animi at autem alias eius labore.</p>
-                  <a href="service-details.html" class="stretched-link"></a>
+                  <img src="assets/img/portfolio/reportar5.png" class="imgType" alt="">
+                    <h3>Poluição atmosférica</h3>
                 </div>
               </div><!-- End Section Item -->
     
-              <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
+              <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
                 <div class="service-item position-relative">
-                  <div class="icon">
-                    <i class="bi bi-chat-square-text"></i>
-                  </div>
-                  <a href="service-details.html" class="stretched-link">
-                    <h3>Dolori Architecto</h3>
-                  </a>
-                  <p>Hic molestias ea quibusdam eos. Fugiat enim doloremque aut neque non et debitis iure. Corrupti recusandae ducimus enim.</p>
-                  <a href="service-details.html" class="stretched-link"></a>
+                  <img src="assets/img/portfolio/reportar6.png" class="imgType" alt="">
+                    <h3>Falta de iluminação em espaços verdes públicos</h3>
+                </div>
+              </div><!-- End Section Item -->
+
+              
+              <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                <div class="service-item  position-relative">
+                  <img src="assets/img/portfolio/reportar7.png" class="imgType" alt="">
+                    <h3>Desperdício de água</h3>
+                </div>
+              </div><!-- End Section Item -->
+    
+              <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                <div class="service-item position-relative">
+                  <img src="assets/img/portfolio/reportar8.png" class="imgType" alt="">
+                    <h3>Rios, ribeiras ou fontes poluídas</h3>
+                </div>
+              </div><!-- End Section Item -->
+    
+              <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                <div class="service-item position-relative">
+                  <img src="assets/img/portfolio/reportar9.png" class="imgType" alt="">
+                    <h3>Inundações ou problemas de escoamento</h3>
                 </div>
               </div><!-- End Section Item -->
     
