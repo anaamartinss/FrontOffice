@@ -555,7 +555,7 @@ h6 {
 .footer {
   color: #ffffff;
   background-color: #009970;
-  font-size: 14px;
+  font-size: 12px;
   padding-bottom: 50px;
   position: relative;
 }
@@ -576,7 +576,7 @@ h6 {
 
 .footer .footer-about .logo span {
   color: #ffffff;
-  font-size: 30px;
+  font-size: 50px;
   font-weight: 700;
   letter-spacing: 1px;
   font-family: var(--heading-font);
@@ -597,6 +597,7 @@ h6 {
   border: 1px solid color-mix(in srgb, var(--default-color), transparent 50%);
   font-size: 16px;
   color: #ffffff;
+  margin-top: 20px;
   margin-right: 10px;
   transition: 0.3s;
 }
@@ -607,7 +608,8 @@ h6 {
 }
 
 .footer h4 {
-  font-size: 16px;
+  color:#ffffff;
+  font-size: 20px;
   font-weight: bold;
   position: relative;
   padding-bottom: 12px;
@@ -615,6 +617,7 @@ h6 {
 
 .footer .footer-links {
   margin-bottom: 30px;
+  margin-left: auto;
 }
 
 .footer .footer-links ul {
