@@ -457,7 +457,7 @@
     </div>
 
     <div class="container" data-aos="fade-up" data-aos-delay="100">
-      <form action="forms/report.php" method="post" class="php-email-form">
+      <form id="reportForm">
         <div class="row gy-4">
 
           <!-- Informações da Ocorrência -->
@@ -465,9 +465,17 @@
             <label for="tipo-ocorrencia" class="pb-2">Tipo de Ocorrência *</label>
             <select id="tipo-ocorrencia" name="tipo_ocorrencia" class="form-control" required>
               <option value="">Selecione...</option>
-              <option value="poluicao">Poluição</option>
-              <option value="desmatamento">Desmatamento</option>
-              <option value="outro">Outro</option>
+              <option value="poluicao">Árvores Caídas/Risco de Cair</option>
+              <option value="desmatamento">Ramos Partidos</option>
+              <option value="poluicao">Plantas Invasoras</option>
+              <option value="desmatamento">Estruturas Debilitadas</option>
+              <option value="inundacao">Poluição Atmosférica</option>
+              <option value="iluminacao">Falta de Iluminação</option>
+              <option value="desmatamento">Derperdicio de Água</option>
+              <option value="inundacao">Águas Poluídas</option>
+              <option value="iluminacao">Inundações</option>
+
+
             </select>
           </div>
           <div class="col-md-6">

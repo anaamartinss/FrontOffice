@@ -207,3 +207,36 @@
   document.addEventListener('scroll', navmenuScrollspy);
 
 })();
+
+
+/**
+ * * Guardar Dados do formulário em Local Storage
+ */
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.getElementById("reportForm");
+
+  form.addEventListener("submit", function (event) {
+    event.preventDefault(); // Impede o envio padrão do formulário
+
+    // Captura os dados do formulário
+    const formData = new FormData(form);
+    const jsonData = {};
+
+    // Converte os dados do formulário para JSON
+    formData.forEach((value, key) => {
+      jsonData[key] = value;
+    });
+
+    // Armazena os dados no Local Storage
+    const storedReports = JSON.parse(localStorage.getItem("reports")) || [];
+    storedReports.push(jsonData);
+    localStorage.setItem("reports", JSON.stringify(storedReports));
+
+    // Exibe o JSON no console
+    console.log("Dados do Formulário em JSON:", JSON.stringify(jsonData));
+
+    // Feedback ao usuário
+    alert("Formulário enviado com sucesso!");
+    form.reset(); // Limpa o formulário após o envio
+  });
+});
