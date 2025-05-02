@@ -238,9 +238,9 @@ h6 {
 }
 
 .header .header-container {
+  border-radius: 1rem;
   background-color: var(--background-color);
   transition: all 0.5s;
-  position: relative;
   padding-top: 5px;
   padding-bottom: 5px;
 }
