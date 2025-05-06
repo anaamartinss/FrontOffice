@@ -240,3 +240,24 @@ document.addEventListener("DOMContentLoaded", function () {
     form.reset(); // Limpa o formulário após o envio
   });
 });
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  // Seleciona todos os cards da seção "Reportar"
+  const serviceItems = document.querySelectorAll(".service-item");
+
+  // Adiciona um evento de clique a cada card
+  serviceItems.forEach((item) => {
+    item.addEventListener("click", function () {
+      // Obtém o valor do tipo de ocorrência do atributo data-tipo
+      const tipoOcorrencia = item.getAttribute("data-tipo");
+
+      // Preenche o campo "Tipo de Ocorrência" no formulário
+      const tipoOcorrenciaSelect = document.getElementById("tipo-ocorrencia");
+      tipoOcorrenciaSelect.value = tipoOcorrencia;
+
+      // Rola a página até o formulário
+      document.getElementById("reportar").scrollIntoView({ behavior: "smooth" });
+    });
+  });
+});

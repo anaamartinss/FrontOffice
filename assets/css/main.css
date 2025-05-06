@@ -1150,7 +1150,7 @@ section,
   text-align: center; /* Centraliza o texto */
 }
 
-.call-to-action h3 {
+.call-to-action h2 {
   color: var(--default-color);
   font-size: 28px;
   font-weight: 700;
@@ -1772,3 +1772,16 @@ section,
   font-size: 1.2rem;
   color: #ffffff;
 }
+
+
+
+
+/*--------------------------------------------------------------
+# Video Inicio Section Section
+--------------------------------------------------------------*/
+.videoInicio {
+  width: 90%;
+  height: auto;
+  display: block;
+}
+
