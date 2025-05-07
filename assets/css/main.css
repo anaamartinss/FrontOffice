@@ -91,7 +91,7 @@ h3,
 h4,
 h5,
 h6 {
-  color: var(--heading-color);
+  color: var(--default-color);
   font-family: var(--heading-font);
 }
 
@@ -812,9 +812,9 @@ section,
 }
 
 .section-title h2 {
+  color: #009970;
   font-size: 32px;
   font-weight: 700;
-  margin-bottom: 20px;
   padding-bottom: 20px;
   position: relative;
 }
@@ -1179,9 +1179,9 @@ section,
 }
 
 /*--------------------------------------------------------------
-# Services Section
+# Tipos Section
 --------------------------------------------------------------*/
-.services .service-item {
+.tipos .service-item {
   background-color: var(--surface-color);
   box-shadow: 0px 5px 90px 0px rgba(0, 0, 0, 0.1);
   padding: 60px 30px;
@@ -1191,7 +1191,7 @@ section,
   height: 100%;
 }
 
-.services .service-item .icon {
+.tipos .service-item .icon {
   color: var(--contrast-color);
   background: var(--accent-color);
   margin: 0;
@@ -1206,26 +1206,26 @@ section,
   transition: ease-in-out 0.3s;
 }
 
-.services .service-item h3 {
+.tipos .service-item h3 {
   font-weight: 700;
   margin: 10px 0 15px 0;
   font-size: 22px;
   transition: ease-in-out 0.3s;
 }
 
-.services .service-item p {
+.tipos .service-item p {
   line-height: 24px;
   font-size: 14px;
   margin-bottom: 0;
 }
 
 @media (min-width: 1365px) {
-  .services .service-item:hover {
+  .tipos .service-item:hover {
     transform: translateY(-10px);
     border-color: var(--accent-color);
   }
 
-  .services .service-item:hover h3 {
+  .tipos .service-item:hover h3 {
     color: var(--accent-color);
   }
 }
@@ -1273,8 +1273,9 @@ section,
 
 .portfolio .portfolio-content {
   background-color: #eeeeee; /* Define o fundo como cinza claro */
-  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1); /* Mantém o sombreamento */
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.1); /* Mantém o sombreamento */
   height: 100%;
+  height: 300px !important;
   overflow: hidden;
   display: flex; /* Ativa o flexbox */
   flex-direction: column; /* Organiza os elementos verticalmente */
@@ -1288,13 +1289,19 @@ section,
   margin: 0 auto; /* Centraliza os quadrados */
 }
 
+
+.swiper-pagination {
+  position: relative;
+}
 .portfolio .portfolio-content img {
   transition: 0.3s;
   position: relative;
   z-index: 1;
   max-width: 100%; /* Garante que a imagem não ultrapasse o contêiner */
-  height: auto; /* Mantém a proporção da imagem */
+  height: 13rem; /* Mantém a proporção da imagem */
   margin-bottom: 10px; /* Espaço entre a imagem e a barra */
+  max-width: 100%;
+  min-width: 150%;
 }
 
 .portfolio .portfolio-content .portfolio-info {
@@ -1683,7 +1690,7 @@ section,
 }
 
 /*--------------------------------------------------------------
-# Starter Section Section
+# Starter Section 
 --------------------------------------------------------------*/
 
 
@@ -1729,7 +1736,7 @@ section,
 
 
 /*--------------------------------------------------------------
-# Video Section Section
+# Video Section 
 --------------------------------------------------------------*/
 .video {
   padding: 80px 0;
@@ -1773,11 +1780,8 @@ section,
   color: #ffffff;
 }
 
-
-
-
 /*--------------------------------------------------------------
-# Video Inicio Section Section
+# Video Inicio Section 
 --------------------------------------------------------------*/
 .videoInicio {
   width: 90%;
@@ -1785,3 +1789,9 @@ section,
   display: block;
 }
 
+/*--------------------------------------------------------------
+# OffCanvas Section 
+--------------------------------------------------------------*/
+.offcanvas.offcanvas-end {
+  --bs-offcanvas-width: 60vw !important;
+}
