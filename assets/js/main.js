@@ -227,17 +227,25 @@ document.addEventListener("DOMContentLoaded", function () {
       jsonData[key] = value;
     });
 
+    // Verifica se todos os campos obrigatórios estão preenchidos
+    if (!jsonData.tipo_ocorrencia || !jsonData.local || !jsonData.morada) {
+      alert("Por favor, preencha todos os campos obrigatórios!");
+      return;
+    }
+
     // Armazena os dados no Local Storage
     const storedReports = JSON.parse(localStorage.getItem("reports")) || [];
     storedReports.push(jsonData);
     localStorage.setItem("reports", JSON.stringify(storedReports));
 
-    // Exibe o JSON no console
+    // Exibe o JSON no console para depuração
     console.log("Dados do Formulário em JSON:", JSON.stringify(jsonData));
 
     // Feedback ao usuário
-    alert("Formulário enviado com sucesso!");
-    form.reset(); // Limpa o formulário após o envio
+    alert("Ocorrência enviada com sucesso!");
+
+    // Limpa o formulário após o envio
+    form.reset();
   });
 });
 
