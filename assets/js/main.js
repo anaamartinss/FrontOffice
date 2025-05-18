@@ -239,19 +239,18 @@ document.addEventListener("DOMContentLoaded", function () {
     if (file) {
       const reader = new FileReader();
       reader.onload = function (e) {
-        jsonData.anexo = e.target.result; // Adiciona o arquivo em Base64 ao JSON
+  // Adiciona o arquivo em Base64 dentro de um array chamado "imagens"
+  jsonData.imagens = [e.target.result];
 
-        // Armazena os dados no Local Storage
-        const storedReports = JSON.parse(localStorage.getItem("reports")) || [];
-        storedReports.push(jsonData);
-        localStorage.setItem("reports", JSON.stringify(storedReports));
+  // Armazena os dados no Local Storage
+  const storedReports = JSON.parse(localStorage.getItem("reports")) || [];
+  storedReports.push(jsonData);
+  localStorage.setItem("reports", JSON.stringify(storedReports));
 
-        // Feedback ao usuário
-        alert("Ocorrência enviada com sucesso!");
+  alert("Ocorrência enviada com sucesso!");
+  form.reset();
+};
 
-        // Limpa o formulário após o envio
-        form.reset();
-      };
       reader.readAsDataURL(file); // Converte o arquivo para Base64
     } else {
       // Caso nenhum arquivo seja anexado, salva os dados sem o anexo
