@@ -208,7 +208,6 @@
 
 })();
 
-
 /**
  * * Guardar Dados do formulário em Local Storage
  */
@@ -233,21 +232,42 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
     }
 
-    // Armazena os dados no Local Storage
-    const storedReports = JSON.parse(localStorage.getItem("reports")) || [];
-    storedReports.push(jsonData);
-    localStorage.setItem("reports", JSON.stringify(storedReports));
+    // Captura o arquivo anexado e converte para Base64
+    const fileInput = document.getElementById("anexo");
+    const file = fileInput.files[0]; // Obtém o primeiro arquivo anexado
 
-    // Exibe o JSON no console para depuração
-    console.log("Dados do Formulário em JSON:", JSON.stringify(jsonData));
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = function (e) {
+        jsonData.anexo = e.target.result; // Adiciona o arquivo em Base64 ao JSON
 
-    // Feedback ao usuário
-    alert("Ocorrência enviada com sucesso!");
+        // Armazena os dados no Local Storage
+        const storedReports = JSON.parse(localStorage.getItem("reports")) || [];
+        storedReports.push(jsonData);
+        localStorage.setItem("reports", JSON.stringify(storedReports));
 
-    // Limpa o formulário após o envio
-    form.reset();
+        // Feedback ao usuário
+        alert("Ocorrência enviada com sucesso!");
+
+        // Limpa o formulário após o envio
+        form.reset();
+      };
+      reader.readAsDataURL(file); // Converte o arquivo para Base64
+    } else {
+      // Caso nenhum arquivo seja anexado, salva os dados sem o anexo
+      const storedReports = JSON.parse(localStorage.getItem("reports")) || [];
+      storedReports.push(jsonData);
+      localStorage.setItem("reports", JSON.stringify(storedReports));
+
+      // Feedback ao usuário
+      alert("Ocorrência enviada com sucesso!");
+
+      // Limpa o formulário após o envio
+      form.reset();
+    }
   });
 });
+
 
 
 document.addEventListener("DOMContentLoaded", function () {
