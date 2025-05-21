@@ -288,3 +288,12 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+document.addEventListener("DOMContentLoaded", function () {
+  // Número de ocorrências = número de objetos no array "reports"
+  const reports = JSON.parse(localStorage.getItem("reports")) || [];
+  document.getElementById("num-ocorrencias").textContent = reports.length;
+
+  // Número de peritos = valor guardado em localStorage (exemplo: localStorage.setItem('numPeritos', 70))
+  const numPeritos = localStorage.getItem("numPeritos") || 0;
+  document.getElementById("num-peritos").textContent = numPeritos;
+});
