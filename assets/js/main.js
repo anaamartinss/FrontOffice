@@ -289,11 +289,23 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 document.addEventListener("DOMContentLoaded", function () {
+  // Garante que existe um array "peritos" no localStorage
+  let peritos = JSON.parse(localStorage.getItem("peritos")) || [];
+  if (peritos.length === 0) {
+    // Adiciona um perito de exemplo se o array estiver vazio
+    peritos.push({ nome: "Perito Exemplo", especialidade: "Ambiente" });
+    localStorage.setItem("peritos", JSON.stringify(peritos));
+  }
+
   // Número de ocorrências = número de objetos no array "reports"
   const reports = JSON.parse(localStorage.getItem("reports")) || [];
   document.getElementById("num-ocorrencias").textContent = reports.length;
 
-  // Número de peritos = valor guardado em localStorage (exemplo: localStorage.setItem('numPeritos', 70))
-  const numPeritos = localStorage.getItem("numPeritos") || 0;
-  document.getElementById("num-peritos").textContent = numPeritos;
+  // Número de peritos = número de objetos no array "peritos"
+  peritos = JSON.parse(localStorage.getItem("peritos")) || [];
+  document.getElementById("num-peritos").textContent = peritos.length;
 });
+
+const peritos = JSON.parse(localStorage.getItem("peritos")) || [];
+const numeroDePeritos = peritos.length;
+console.log(numeroDePeritos);
