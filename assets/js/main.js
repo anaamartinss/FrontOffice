@@ -226,6 +226,9 @@ document.addEventListener("DOMContentLoaded", function () {
       jsonData[key] = value;
     });
 
+    // Adiciona o estado inicial
+    jsonData.estado = "em_analise";
+
     // Verifica se todos os campos obrigatórios estão preenchidos
     if (!jsonData.tipo_ocorrencia || !jsonData.local || !jsonData.morada) {
       alert("Por favor, preencha todos os campos obrigatórios!");
