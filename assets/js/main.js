@@ -312,3 +312,45 @@ document.addEventListener("DOMContentLoaded", function () {
 const peritos = JSON.parse(localStorage.getItem("peritos")) || [];
 const numeroDePeritos = peritos.length;
 console.log(numeroDePeritos);
+
+document.addEventListener("DOMContentLoaded", function () {
+  // Vai buscar as ocorrências ao localStorage
+  const reports = JSON.parse(localStorage.getItem("reports")) || [];
+  const wrapper = document.getElementById("ultimas-ocorrencias-wrapper");
+
+  // Limpa o wrapper
+  if (wrapper) wrapper.innerHTML = "";
+
+  // Mostra as últimas 6 ocorrências (ou menos se houver menos)
+  reports.slice(-6).reverse().forEach(report => {
+    // Escolhe a imagem (se existir)
+    let imgHtml = "";
+    if (report.imagens && report.imagens.length > 0) {
+      imgHtml = `<img src="${report.imagens[0]}" class="img-fluid" alt="">`;
+    } else {
+      imgHtml = `<img src="assets/img/portfolio/placeholder.png" class="img-fluid" alt="">`;
+    }
+
+    // Estado da ocorrência (podes adaptar as classes conforme o teu CSS)
+    let statusClass = "status-bar";
+    if (report.estado === "concluida") statusClass = "status-bar-completed";
+    else if (report.estado === "em_aberto") statusClass = "status-bar-open";
+    else if (report.estado === "em_analise") statusClass = "status-bar";
+
+    // Cria o slide
+    const slide = document.createElement("div");
+    slide.className = "swiper-slide";
+    slide.innerHTML = `
+      <div class="portfolio-content h-100">
+        <a href="#" class="glightbox">
+          ${imgHtml}
+        </a>
+        <div class="portfolio-info">
+          <h4 style="padding: 5px;">${report.tipo_ocorrencia || "Ocorrência"}</h4>
+          <p class="${statusClass}">${report.estado.replace("_", " ")}</p>
+        </div>
+      </div>
+    `;
+    wrapper.appendChild(slide);
+  });
+});
