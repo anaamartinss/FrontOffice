@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EyesEverywhere</title>
+
+  <!-- Vendor CSS -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <!-- Main CSS -->
+  <link href="assets/css/main.css" rel="stylesheet">
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header fixed-top d-flex align-items-center">
+    <div class="container-fluid d-flex justify-content-end align-items-center">
+
+      <span class="logo-text">EyesEverywhere</span>
+
+      <!-- MENU PRINCIPAL -->
+      <nav id="navmenu" class="navmenu">
+        <ul class="d-flex gap-3 align-items-center mb-0">
+          <li><a href="#inicio">INÍCIO</a></li>
+          <li><a href="#sobrenos">SOBRE NÓS</a></li>
+          <li><a href="#informacoes">INFORMAÇÕES</a></li>
+          <li><a href="#ultimas">ÚLTIMAS</a></li>
+          <li><a href="#tipos">TIPOS</a></li>
+          <li><a href="#contactos">CONTACTOS</a></li>
+          <li><a href="#" id="areaReservada">ÁREA RESERVADA</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+      <!-- /MENU PRINCIPAL -->
+
+      <a class="btn-getstarted" href="#reportar" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+        Reportar
+      </a>
+
+    </div>
+  </header>
+  <!-- /HEADER -->
+
+  <!-- MODAL DE LOGIN / CHAT -->
+  <div id="mainModal" class="modal fade" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <div class="modal-header">
+          <h5 id="modalTitle" class="modal-title">Login / Registo</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+          <button id="btnLogout" type="button" class="btn btn-box-arrow-right p-0 m-0 position-absolute" style="top: 10px; right: 50px; z-index: 10;">
+              <i class="bi bi-box-arrow-right" style="font-size: 1.7rem; color: #dc3545;" title="Terminar Sessão"></i>
+            </button>
+        </div>
+
+        <div class="modal-body">
+          <!-- Container de Autenticação -->
+          <div id="authContainer">
+            <ul class="nav nav-tabs mb-3">
+              <li class="nav-item">
+                <button id="tabLogin" class="nav-link active" style="color: #009970;">Login</button>
+              </li>
+              <li class="nav-item">
+                <button id="tabRegister" class="nav-link" style="color: #009970;">Registo</button>
+              </li>
+            </ul>
+
+            <form id="loginForm">
+              <div class="mb-3">
+                <label for="loginUsername" class="form-label">Utilizador</label>
+                <input id="loginUsername" type="text" class="form-control">
+              </div>
+              <div class="mb-3">
+                <label for="loginPassword" class="form-label">Palavra-passe</label>
+                <input id="loginPassword" type="password" class="form-control">
+              </div>
+              <div id="loginError" class="text-danger mb-2"></div>
+              <button id="btnLogin" type="button" class="btn btn-primary btn-success">Entrar</button>
+            </form>
+
+            <form id="registerForm" class="d-none">
+              <div class="mb-3">
+                <label for="regUsername" class="form-label">Utilizador</label>
+                <input id="regUsername" type="text" class="form-control">
+              </div>
+              <div class="mb-3">
+                <label for="regPassword" class="form-label">Palavra-passe</label>
+                <input id="regPassword" type="password" class="form-control">
+              </div>
+              <div id="regError" class="text-danger mb-2"></div>
+              <button id="btnRegister" type="button" class="btn btn-success">Registar</button>
+            </form>
+          </div>
+          <!-- /Container de Autenticação -->
+
+          <!-- Container do Chat -->
+          <div id="chatContainer" class="d-none position-relative">
+            <div id="chatMessages" class="border p-3 mb-3" style="height:300px; overflow-y:auto;"></div>
+            <div class="input-group">
+              <input id="chatInput" type="text" class="form-control" placeholder="Escreve aqui…">
+                <button id="btnSend" class="btn btn-success">Enviar</button>
+            </div>
+          </div>
+          <!-- /Container do Chat -->
+
+        </div><!-- .modal-body -->
+
+      </div><!-- .modal-content -->
+    </div><!-- .modal-dialog -->
+  </div><!-- #mainModal -->
+  <!-- /MODAL -->
+
+
+  <main class="main">
+
+    <!-- Main Section -->
+    <section id="inicio" class="hero section dark-background">
+
+      <img src="assets/img/portfolio/capa.png" alt="" data-aos="fade-in" class="">
+
+      <div class="container text-center" data-aos="fade-up" data-aos-delay="100">
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <h2>EyesEverywhere</h2>
+            <p>Os olhos de um Futuro mais Verde</p>
+          </div>
+        </div>
+      </div>
+
+    </section><!-- /Main Section -->
+
+    <!-- Companies Section -->
+    <section id="clients" class="clients section light-background">
+
+      <div class="container" data-aos="fade-up">
+
+        <div class="row gy-4">
+
+          <div class="col-xl-2 col-md-3 col-6 client-logo">
+            <img src="assets/img/clients/client-1.png" class="img-fluid" alt="">
+          </div><!-- End Client Item -->
+
+          <div class="col-xl-2 col-md-3 col-6 client-logo">
+            <img src="assets/img/clients/client-2.png" class="img-fluid" alt="">
+          </div><!-- End Client Item -->
+
+          <div class="col-xl-2 col-md-3 col-6 client-logo">
+            <img src="assets/img/clients/client-3.png" class="img-fluid" alt="">
+          </div><!-- End Client Item -->
+
+          <div class="col-xl-2 col-md-3 col-6 client-logo">
+            <img src="assets/img/clients/client-4.png" class="img-fluid" alt="">
+          </div><!-- End Client Item -->
+
+          <div class="col-xl-2 col-md-3 col-6 client-logo">
+            <img src="assets/img/clients/client-5.png" class="img-fluid" alt="">
+          </div><!-- End Client Item -->
+
+          <div class="col-xl-2 col-md-3 col-6 client-logo">
+            <img src="assets/img/clients/client-6.png" class="img-fluid" alt="">
+          </div><!-- End Client Item -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Companies Section -->
+
+    <!-- About Us Section -->
+    <section id="sobrenos" class="about section">
+
+      <div class="container">
+
+        <div class="row">
+          
+
+          <div class="col-lg-6 content order-last  order-lg-first" data-aos="fade-up" data-aos-delay="100">
+            <h3>Sobre nós</h3>
+            <p>
+              Somos uma empresa focada na preseveração do meio ambiente e facilitamos
+              a resolução de situações que, habitualmente, não sabe a quem reportar!</p>
+            <ul>
+              <li>
+                <div>
+                  <h5>Foco na proteção ambiental</h5>
+                  <p>Todos os processos são monitorizados e realizados com cuidado, prestando especial atenção ao ambiente.</p>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <h5>Resolução rápida das ocorrências</h5>
+                  <p>Contamos com profissionais espalhados pelo pais prontos para atuar nas mais variadas ocorrências. Sendo-nos assim possivel resolver todas as denuncias em tempo recorde!</p>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <h5>Apreciamos as suas prioridades</h5>
+                  <p>Cada ocorrência é analisada e priorizamos a eficiencia nos nossos processos para garantir a sua satisfação!</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-6 videoInicio-container">
+            <video class="videoInicio" autoplay loop muted playsinline>
+              <source src="assets/img/portfolio/inicio.mp4" type="video/mp4">
+            </video>
+            </div>
+        </div>
+
+      </div>
+
+    </section><!-- /About Us Section -->
+
+    <!-- Numbers Section -->
+    <section id="informacoes" class="stats section accent-background">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item text-center w-100 h-100">
+              <p>Estamos em</p>
+              <span data-purecounter-start="0" data-purecounter-end="159" data-purecounter-duration="1" class="purecounter"></span>
+              <p>Cidades</p>
+            </div>
+          </div><!-- End Section Item -->
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item text-center w-100 h-100">
+              <p>Já Resolvemos</p>
+              <span id="num-ocorrencias" ></span>
+              <p>Ocorrências</p>
+            </div>
+          </div><!-- End Section Item -->
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item text-center w-100 h-100">
+              <p>Contamos com</p>
+              <span id="num-peritos"></span>
+              <p>Peritos</p>
+            </div>
+          </div><!-- End Section Item -->
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item text-center w-100 h-100">
+              <p>Demoramos cerca </p>
+              <span data-purecounter-start="0" data-purecounter-end="2" data-purecounter-duration="1" class="purecounter"></span>
+              <p>Dias a resolver </p>
+            </div>
+          </div><!-- End Section Item -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Numbers Section -->
+
+    <!-- Why Us Section -->
+    <section id="why-us" class="why-us section">
+
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="why-box">
+              <h3>Porquê escolher-nos?</h3>
+              <p>
+                São vários os fatores que o podem fazer escolher-nos! Somos rápidos, eficientes e focados nas soluções!
+                <br> Na nossa empresa, tratamos de  qualquer ocorrência ambiental com  profissionalismo e rapidez.  Se procura uma equipa de confiança, experiente e pronta a agir, somos a escolha certa. 
+                <br> Conosco, o ambiente fica em boas mãos!
+              </p>
+            </div>
+          </div><!-- End Why Box -->
+
+          <div class="col-lg-8 d-flex align-items-stretch">
+            <div class="row text-center align-items-stretch">
+
+              <div class="col-xl-4 col-md-4 col-sm-12 d-flex" data-aos="fade-up" data-aos-delay="200">
+                <div class="icon-box d-flex flex-column justify-content-center align-items-center">
+                  <i class="bi bi-globe-americas"></i>
+                  <h4>Eficácia</h4>
+                  <p>Agimos com soluções rápidas e eficazes, minimizando impactos ambientais.</p>
+                </div>
+              </div><!-- End Icon Box -->
+
+              <div class="col-xl-4 col-md-4 col-sm-12 d-flex" data-aos="fade-up" data-aos-delay="300">
+                <div class="icon-box d-flex flex-column justify-content-center align-items-center">
+                  <i class="bi bi-lightning-charge"></i>
+                  <h4>Rapidez</h4>
+                  <p>Resposta imediata e profissional, sempre prontos a atuar quando mais importa.</p>
+                </div>
+              </div><!-- End Icon Box -->
+
+              <div class="col-xl-4 col-md-4 col-sm-12" data-aos="fade-up" data-aos-delay="400">
+                <div class="icon-box d-flex flex-column justify-content-center align-items-center">
+                  <i class="bi bi-heart" style="margin-top: 47px;"></i>
+                  <h4>Qualidade</h4>
+                  <p>Oferecemos um serviço moderno e seguro, sempre com foco na proteção do ambiente e na satisfação do cliente.</p>
+                </div>
+              </div><!-- End Icon Box -->
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /Why Us Section -->
+
+    <!-- Call To Action Section -->
+    <section id="call-to-action" class="call-to-action section dark-background">
+      <div class="container d-flex flex-column justify-content-center align-items-center text-center">
+        <h2>Precisas de nós?</h2>
+        <p>Estamos prontos para ajudar! Contacte-nos e garanta uma resposta rápida, eficaz e profissional.
+          <br> Protegemos o ambiente, transformamos o Futuro!</p>
+        <a class="cta-btn align-middle"  href="index.html#reportar" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Reportar</a>
+      </div>
+    </section><!-- /Call To Action Section -->
+
+    <!-- Last Section -->
+    <section id="ultimas" class="portfolio section">
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Últimas Ocorrências</h2>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+        <div class="swiper init-swiper">
+          <script type="application/json" class="swiper-config">
+            {
+              "loop": true,
+              "speed": 600,
+              "autoplay": {
+                "delay": 5000
+              },
+              "slidesPerView": 3,
+              "spaceBetween": 30,
+              "pagination": {
+                "el": ".swiper-pagination",
+                "clickable": true
+              },
+              "navigation": {
+                "nextEl": ".swiper-button-next",
+                "prevEl": ".swiper-button-prev"
+              }
+            }
+          </script>
+          <div class="swiper-wrapper" id="ultimas-ocorrencias-wrapper">
+            <!-- Os slides vão ser inseridos aqui via JS -->
+          </div>
+          <!-- Add Pagination -->
+          <div class="swiper-pagination" style="padding-top: 15px;"></div>
+          <!-- Add Navigation -->
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+        </div>
+      </div>
+    </section><!-- /Last Section -->
+
+    <!-- Video Section -->
+    <section id="video">
+      <div class="video-container">
+        <video class="full-width-video" autoplay loop muted playsinline>
+          <source src="assets/img/portfolio/verde.mp4" type="video/mp4">
+          O navegador não suporta a tag de vídeo.
+        </video>
+        <div class="video-overlay">
+          <h3>EyesEverywhere</h3>
+          <p>Os olhos de um Futuro mais Verde</p>
+        </div>
+      </div>
+    </section><!-- /Video Section -->
+
+
+    <!-- Tipos Section -->
+        <section id="tipos" class="tipos section">
+
+          <!-- Section Title -->
+          <div class="container section-title" data-aos="fade-up">
+            <h2 style="color: #009970;">Reportar:</h2>
+          </div><!-- End Section Title -->
+    
+          <div class="container">
+    
+            <div class="row gy-4">
+    
+              <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                <div class="service-item  position-relative" data-tipo = "Árvores Caídas/Risco de Cair" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                  <img src="assets/img/portfolio/reportar1.png" class="imgType" alt="">
+                    <h3>Árvores Caidas ou em risco de queda</h3>
+                </div>
+              </div><!-- End Section Item -->
+    
+              <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                <div class="service-item position-relative" data-tipo = "Ramos Partidos" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                  <img src="assets/img/portfolio/reportar2.png" class="imgType" alt="">
+                    <h3>Ramos Partidos a obstruir vias ou passeios</h3>
+                </div>
+              </div><!-- End Section Item -->
+    
+              <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                <div class="service-item position-relative" data-tipo = "Plantas Invasoras" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                  <img src="assets/img/portfolio/reportar3.png" class="imgType" alt="">
+                    <h3>Plantas invasoras a afetar a vegetação local</h3>
+                </div>
+              </div><!-- End Section Item -->
+    
+             
+              <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                <div class="service-item  position-relative" data-tipo = "Estruturas Debilitadas" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                  <img src="assets/img/portfolio/reportar4.png" class="imgType" alt="">
+                    <h3>Estruturas debilitadas</h3>
+                </div>
+              </div><!-- End Section Item -->
+    
+              <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                <div class="service-item position-relative" data-tipo = "Poluição Atmosférica" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                  <img src="assets/img/portfolio/reportar5.png" class="imgType" alt="">
+                    <h3>Poluição atmosférica</h3>
+                </div>
+              </div><!-- End Section Item -->
+    
+              <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                <div class="service-item position-relative" data-tipo = "Falta de Iluminação" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">  
+                  <img src="assets/img/portfolio/reportar6.png" class="imgType" alt="">
+                    <h3>Falta de iluminação em espaços verdes públicos</h3>
+                </div>
+              </div><!-- End Section Item -->
+
+              
+              <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                <div class="service-item  position-relative" data-tipo = "Desperdício de Água" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                  <img src="assets/img/portfolio/reportar7.png" class="imgType" alt="">
+                    <h3>Desperdício de água</h3>
+                </div>
+              </div><!-- End Section Item -->
+    
+              <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                <div class="service-item position-relative" data-tipo = "Águas Poluídas" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                  <img src="assets/img/portfolio/reportar8.png" class="imgType" alt="">
+                    <h3>Rios, ribeiras ou fontes poluídas</h3>
+                </div>
+              </div><!-- End Section Item -->
+    
+              <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                <div class="service-item position-relative" data-tipo = "Inundações" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                  <img src="assets/img/portfolio/reportar9.png" class="imgType" alt="">
+                    <h3>Inundações ou problemas de escoamento</h3>
+                </div>
+              </div><!-- End Section Item -->
+    
+            </div>
+    
+          </div>
+    
+  </section><!-- /Tipos Section -->
+
+  <!-- Reportar Ocorrência Section -->
+ 
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+
+      <div class="offcanvas-body">
+    <div class="container section-title" style="padding: 0px 0px 0px 0px !important; height: 5rem;" data-aos="fade-up"> 
+      
+      <section id="reportar" class="contact section" style="padding: 0px 0px;">
+      <h2>Reportar Ocorrência:</h2>
+    </div>
+
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+      <form id="reportForm">
+        <div class="row gy-4">
+
+          <div class="col-md-6">
+        <label for="nome-utilizador" class="pb-2">Nome de Utilizador</label>
+        <input type="text" id="nome-utilizador" name="nome_utilizador" class="form-control">
+      </div>
+
+
+          <!-- Informações da Ocorrência -->
+          <div class="col-md-6">
+            
+            <label for="tipo-ocorrencia" class="pb-2">Tipo de Ocorrência *</label>
+            <select id="tipo-ocorrencia" name="tipo_ocorrencia" class="form-control" required>
+              <option value="">Selecione...</option>
+              <option value="Árvores Caídas/Risco de Cair">Árvores Caídas/Risco de Cair</option>
+              <option value="Ramos Partidos">Ramos Partidos</option>
+              <option value="Plantas Invasoras">Plantas Invasoras</option>
+              <option value="Estruturas Debilitadas">Estruturas Debilitadas</option>
+              <option value="Poluição Atmosférica">Poluição Atmosférica</option>
+              <option value="Falta de Iluminação">Falta de Iluminação</option>
+              <option value="Derperdicio de Água">Derperdicio de Água</option>
+              <option value="Águas Poluídas">Águas Poluídas</option>
+              <option value="Inundações">Inundações</option>
+
+
+            </select>
+          </div>
+          <div class="col-md-12">
+            <label for="descricao-ocorrencia" class="pb-2">Descrição da Ocorrência</label>
+            <input type="text" id="descricao-ocorrencia" name="descricao_ocorrencia" class="form-control">
+          </div>
+
+          <!-- Local Ocorrência -->
+            <div class="col-md-4">
+            <label for="distrito" class="pb-2">Distrito *</label>
+            <select id="distrito" name="distrito" class="form-control" required>
+              <option value="">Selecione o distrito...</option>
+            </select>
+          </div>
+          <div class="col-md-4">
+            <label for="concelho" class="pb-2">Concelho *</label>
+            <select id="concelho" name="concelho" class="form-control" required disabled>
+              <option value="">Selecione o concelho...</option>
+            </select>
+          </div>
+          <div class="col-md-4">
+            <label for="freguesia" class="pb-2">Freguesia *</label>
+            <select id="freguesia" name="freguesia" class="form-control" required disabled>
+              <option value="">Selecione a freguesia...</option>
+            </select>
+          </div>
+          <div class="col-md-6">
+            <label for="morada" class="pb-2">Morada *</label>
+            <input type="text" id="morada" name="morada" class="form-control" required>
+          </div>
+          <div class="col-md-6">
+            <label for="codigo-postal" class="pb-2">Código-Postal</label>
+            <input type="text" id="codigo-postal" name="codigo_postal" class="form-control">
+          </div>
+
+          <!-- Contactos -->
+          <div class="col-md-6">
+            <label for="nome" class="pb-2">Nome</label>
+            <input type="text" id="nome" name="nome" class="form-control">
+          </div>
+          <div class="col-md-6">
+            <label for="email" class="pb-2">Email</label>
+            <input type="email" id="email" name="email" class="form-control">
+          </div>
+          <div class="col-md-6">
+            <label for="telemovel" class="pb-2">Telemóvel</label>
+            <input type="text" id="telemovel" name="telemovel" class="form-control">
+          </div>
+
+          <!-- Anexar Fotografias -->
+          <div class="col-md-6">
+            <label for="anexo" class="pb-2">Anexar Fotografias</label>
+            <input type="file" id="anexo" name="anexo" class="form-control">
+          </div>
+
+          <!-- Submit Button -->
+          <div class="col-md-12 text-center">
+            <button type="submit" class="btn btn-success">Enviar ocorrência</button>
+          </div>
+
+        </div>
+      </form>
+    </div>
+      </div>
+    </div>
+  </section><!-- /Reportar Ocorrência Section -->
+
+
+  </main>
+
+  <footer id="footer" class="footer light-background">
+
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-5 col-md-12 footer-about">
+          <a href="index.html" class="logo d-flex align-items-center">
+            <span class="sitename">EyesEverywhere</span>
+          </a>
+          <p></p>
+          <div class="social-links d-flex mt-4">
+            <a href=""><i class="bi bi-twitter-x"></i></a>
+            <a href=""><i class="bi bi-facebook"></i></a>
+            <a href=""><i class="bi bi-instagram"></i></a>
+            <a href=""><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+        
+        <div class="col-lg-2 col-6 footer-links">
+          <h4>Serviços</h4>
+          <ul>
+            <li><a href="#">Árvores caidas ou em risco de queda</a></li>
+            <li><a href="#">Ramos partidos a obstruir vias ou passeios</a></li>
+            <li><a href="#">Plantas invasoras a afetar a vegetação local</a></li>
+            <li><a href="#">Estruturas debilitadas</a></li>
+            <li><a href="#">Poluição atmosférica</a></li>
+            <li><a href="#">Falta de iluminação em espaços verdes públicos</a></li>
+            <li><a href="#">Desperdício de água</a></li>
+            <li><a href="#">Rios, ribeiras ou fontes poluídas</a></li>
+            <li><a href="#">Inundações ou problemas de escoamento</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
+          <h4>Contacte-nos</h4>
+          <p>Avenida da Liberdade, 105</p>
+          <p>Porto, Matosinhos</p>
+          <p>Portugal</p>
+          <p class="mt-4"><strong>Telemóvel:</strong> <span>+351 234767920</span></p>
+          <p><strong>Email:</strong> <span>info@example.com</span></p>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="container copyright text-center mt-4">
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">EyesEverywhere</strong></p>
+      <div class="credits">
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
